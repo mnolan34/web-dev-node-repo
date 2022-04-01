@@ -40,8 +40,6 @@ const findUserById = (req, res) => {
     res.json(user);
 }
 
-
-
 const findUsersByType =  (type) => {
     const wantedUsers = users.filter(user => user.type === type);
     return wantedUsers;
