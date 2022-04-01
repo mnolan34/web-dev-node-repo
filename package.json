@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "web-dev-server-node",
+  "version": "1.0.0",
+  "description": "Node.js HTTP Web server for the tuiter application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnolan34/web-dev-node-repo.git"
+  },
+  "author": "Matthew Nolan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnolan34/web-dev-node-repo/issues"
+  },
+  "homepage": "https://github.com/mnolan34/web-dev-node-repo#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
