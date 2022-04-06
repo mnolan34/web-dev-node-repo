@@ -5,7 +5,7 @@ const createTuit = (req,res) => {
     const newTuit = req.body;
     newTuit._id = (new Date()).getTime()+'';
     newTuit.username = 'Lord Phobos';
-    newTuit.avatarImage = 'phobos.png';
+    newTuit.avatarImage = "https://i.scdn.co/image/ab6761610000e5eba6202a799672fa3ad8f63023";
     newTuit.handle = 'Phobos_TWRP';
     newTuit.likes = 0;
     newTuit.dislikes = 0;
