@@ -1,33 +1,38 @@
-import posts from "./tuits/tuits.js";
-let tuits = posts;
+import tuitsDao from "../dao/tuits-dao.js";
 
-const createTuit = (req,res) => {
+const createTuit = async (req,res) => {
     const newTuit = req.body;
-    newTuit._id = (new Date()).getTime()+'';
-    newTuit.username = 'Lord Phobos';
-    newTuit.avatarImage = "https://i.scdn.co/image/ab6761610000e5eba6202a799672fa3ad8f63023";
-    newTuit.handle = 'Phobos_TWRP';
-    newTuit.likes = 0;
-    newTuit.dislikes = 0;
-    tuits.push(newTuit);
-    res.json(newTuit);
+    const insertedTuit = await tuitsDao.createTuit(newTuit);
+    //newTuit._id = (new Date()).getTime()+'';
+    //newTuit.username = 'Lord Phobos';
+    //newTuit.avatarImage = "https://i.scdn.co/image/ab6761610000e5eba6202a799672fa3ad8f63023";
+    //newTuit.handle = 'Phobos_TWRP';
+    //newTuit.likes = 0;
+    //newTuit.dislikes = 0;
+    //tuits.push(newTuit);
+    res.json(insertedTuit);
 }
 
-const findAllTuits = (req,res) => {
+const findAllTuits = async (req,res) => {
+    const tuits = await tuitsDao.findAllTuits()
     res.json(tuits);
 }
 
-const updateTuit = (req,res) => {
+const updateTuit = async (req,res) => {
     const tuitIdToUpdate = req.params.tid;
     const updatedTuit = req.body;
-    tuits = tuits.map(t => t._id === tuitIdToUpdate ? updatedTuit : t);
-    res.sendStatus(200);
+    const status = await tuitsDao.updateTuit(tuitIdToUpdate, updatedTuit);
+    //tuits = tuits.map(t => t._id === tuitIdToUpdate ? updatedTuit : t);
+    //res.sendStatus(200);
+    res.send(status);
 }
 
-const deleteTuit = (req,res) => {
+const deleteTuit = async (req,res) => {
     const tuitIdToDelete = req.params.tid;
-    tuits = tuits.filter(t => t._id !== tuitIdToDelete);
-    res.sendStatus(200);
+    const status = await tuitsDao.deleteTuit(tuitIdToDelete);
+    //tuits = tuits.filter(t => t._id !== tuitIdToDelete);
+    //res.sendStatus(200);
+    res.send(status);
 }
 
 export default(app) =>{
