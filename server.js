@@ -7,6 +7,7 @@ import userController from "./controllers/user-controller.js";
 import tuitController from "./controllers/tuit-controller.js";
 
 //mongoose.connect('mongodb://localhost:270127/webdev');
+
 //Local first steps, now must implement Mongo Atlas for HW9
 const PROTOCOL = "mongodb+srv";
 //const DB_USERNAME = process.env.USERNAME;
