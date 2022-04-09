@@ -1,8 +1,6 @@
 import tuitsModel from "../mongoose/tuits-model.js";
 
-export default class TuitDao{
-    findAllTuits = () => tuitsModel.find();
-    createTuit = (tuit) => tuitsModel.create(tuit);
-    deleteTuit = (tid) => tuitsModel.deleteOne({_id: tid});
-    updateTuit = (tid, tuit) => tuitsModel.updateOne({_id: tid}, {$set: tuit});
-}
+    export const findAllTuitsDAO = () => tuitsModel.find();
+    export const createTuitDAO = (tuit) => tuitsModel.create(tuit);
+    export const deleteTuitDAO = (tid) => tuitsModel.deleteOne({_id: tid});
+    export const updateTuitDAO = (tid, tuit) => tuitsModel.updateOne({_id: tid}, {$set: tuit});
