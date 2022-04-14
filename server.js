@@ -12,7 +12,7 @@ import tuitController from "./controllers/tuit-controller.js";
 const PROTOCOL = "mongodb+srv";
 //const DB_USERNAME = process.env.USERNAME;
 const DB_PASSWORD = process.env.PASSWORD;
-const HOST = "cluster0.tpmgl.mongodb.net";
+const HOST = process.env.DB_CONNECTION_STRING;
 const DB_NAME = "webDev"
 const DB_QUERY = "retryWrites=true&w=majority";
 const connectionString = `${PROTOCOL}://webDev:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;// connect to the database
